@@ -2,12 +2,16 @@
 
 CoinGecko MCP — wraps CoinGecko free API (no auth required)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 965+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
+| `get_coin` | Get live cryptocurrency data by CoinGecko ID (e.g., 'bitcoin', 'ethereum'). Returns USD price, market cap, 24h/7d/30d price changes, ATH, circulating supply, and a short description. |
+| `search_coins` | Search for cryptocurrencies by name or symbol. Returns matching coins with their IDs. Example: search_coins({ query: "bitcoin" }) |
+| `get_market_data` | Get top cryptocurrencies ranked by market cap with current prices, 24h changes, and volume. Example: get_market_data({ vs_currency: "usd", limit: 10 }) |
+| `get_trending` | Get the top trending cryptocurrencies on CoinGecko right now, ranked by 24-hour search activity. Returns coin IDs, names, symbols, market cap ranks, and trend scores. No parameters required. |
 
 ## Quick Start
 
@@ -23,7 +27,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 965+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -47,7 +51,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
