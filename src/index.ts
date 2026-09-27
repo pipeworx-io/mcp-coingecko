@@ -695,7 +695,7 @@ const tools: McpToolExport['tools'] = [
   {
     name: 'get_coin',
     description:
-      'CoinGecko coin profile by CoinGecko ID (e.g., \'bitcoin\', \'ethereum\'): USD price plus market cap, 24h/7d/30d price changes, all-time high, circulating supply, and a short project description. Prefer for a coin\'s profile, all-time high, supply or multi-week performance; a bare current spot price is get_crypto_price.',
+      'Get live cryptocurrency data by CoinGecko ID (e.g., \'bitcoin\', \'ethereum\'). Returns USD price, market cap, 24h/7d/30d price changes, ATH, circulating supply, and a short description.',
     inputSchema: {
       type: 'object',
       properties: {

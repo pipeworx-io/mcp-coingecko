@@ -8,7 +8,7 @@ Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents 
 
 | Tool | Description |
 |------|-------------|
-| `get_coin` | CoinGecko coin profile by CoinGecko ID (e.g., 'bitcoin', 'ethereum'): USD price plus market cap, 24h/7d/30d price changes, all-time high, circulating supply, and a short project description. Prefer for a coin's profile, all-time high, supply or multi-week performance; a bare current spot price is get_crypto_price. |
+| `get_coin` | Get live cryptocurrency data by CoinGecko ID (e.g., 'bitcoin', 'ethereum'). Returns USD price, market cap, 24h/7d/30d price changes, ATH, circulating supply, and a short description. |
 | `search_coins` | Search for cryptocurrencies by name or symbol. Returns matching coins with their IDs. Example: search_coins({ query: "bitcoin" }) |
 | `get_market_data` | Get top cryptocurrencies ranked by market cap with current prices, 24h changes, and volume. Example: get_market_data({ vs_currency: "usd", limit: 10 }) |
 | `get_trending` | Get the top trending cryptocurrencies on CoinGecko right now, ranked by 24-hour search activity. Returns coin IDs, names, symbols, market cap ranks, and trend scores. No parameters required. |
