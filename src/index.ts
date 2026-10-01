@@ -802,6 +802,34 @@ async function getCoin(id: string) {
   });
 
   const res = await cgFetch(`${BASE_URL}/coins/${encodeURIComponent(id)}?${params}`);
+  // A coin id CoinGecko does not carry is a NO-RESULT, not a Pipeworx defect.
+  // This used to `throw await httpError(...)`, which produced "CoinGecko error:
+  // 404 — coin not found" and booked `error` with status 500 — i.e. our own
+  // bug tier, on a question whose honest answer is "there is no such coin".
+  // Measured 2026-10-01: it was one of only two genuinely-ours external error
+  // rows on the whole platform that day, and its `sources` named our own
+  // Supabase mirror, so it read as infrastructure failing rather than a miss.
+  //
+  // Two things make the class come out right, and both are needed. The shape
+  // (`found: false` + `result_count: 0`) is what the gateway books as `empty`.
+  // And the message ECHOES the caller's id — the classifier decides
+  // not-found-vs-error by SHAPE, not vocabulary (fleet #711): the
+  // caller-supplied id has to appear in the message TEXT, not just in a
+  // sibling field, or a perfectly clear "coin not found" still falls through
+  // to `error`. The old message said "coin not found" and named nothing.
+  //
+  // Scoped to THIS call deliberately. The pack has three other `!res.ok`
+  // sites (search, market data, trending) where a 404 is not "no such entity"
+  // and would mean a real outage — blanket-converting them would hide one.
+  if (res.status === 404) {
+    return {
+      id,
+      found: false,
+      result_count: 0,
+      hint: `No CoinGecko coin with id "${id}". Ids are CoinGecko's own slugs ("bitcoin", not "BTC") — use search_coins to find the right id from a name or symbol.`,
+      empty_reason: 'no_match',
+    };
+  }
   if (!res.ok) throw await httpError(res, 'CoinGecko error');
 
   const data = (await res.json()) as {
