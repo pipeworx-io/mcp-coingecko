@@ -10,7 +10,7 @@ import pack from './index.js';
 
 
 const server = new Server(
-  { name: '@pipeworx/mcp-coingecko', version: '0.1.6' },
+  { name: '@pipeworx/mcp-coingecko', version: '0.1.7' },
   { capabilities: { tools: {} } },
 );
 
