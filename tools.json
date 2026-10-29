@@ -1,0 +1,65 @@
+[
+  {
+    "name": "get_coin",
+    "description": "Get live cryptocurrency data by CoinGecko ID (e.g., 'bitcoin', 'ethereum'). Returns USD price, market cap, 24h/7d/30d price changes, ATH, circulating supply, and a short description.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "CoinGecko coin ID (lowercase), e.g. \"bitcoin\", \"ethereum\", \"solana\", \"dogecoin\""
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "search_coins",
+    "description": "Search for cryptocurrencies by name or symbol. Returns matching coins with their IDs. Example: search_coins({ query: \"bitcoin\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search query — coin name or symbol, e.g. \"bitcoin\", \"ETH\", \"sol\""
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_market_data",
+    "description": "Get top cryptocurrencies ranked by market cap with current prices, 24h changes, and volume. Example: get_market_data({ vs_currency: \"usd\", limit: 10 })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "vs_currency": {
+          "type": "string",
+          "description": "Currency to show prices in, e.g. \"usd\", \"eur\", \"btc\" (default: \"usd\")"
+        },
+        "order": {
+          "type": "string",
+          "description": "Sort order: \"market_cap_desc\", \"volume_desc\", \"price_desc\" (default: \"market_cap_desc\")"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of coins to return, 1-250 (default: 20)"
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "get_trending",
+    "description": "Get the top trending cryptocurrencies on CoinGecko right now, ranked by 24-hour search activity. Returns coin IDs, names, symbols, market cap ranks, and trend scores. No parameters required.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+]
