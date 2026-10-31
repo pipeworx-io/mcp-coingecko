@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-coingecko",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CoinGecko MCP — wraps CoinGecko free API (no auth required)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "coingecko",
     "gatewaySlug": "coingecko",
-    "sourceHash": "v1-f470a95c1e0eb28170bb86f2a0455ab4502451630dfd9d1aeb46a95ee97a581b",
-    "sourceCommit": "4277282d72f9bf55e548b3799aaf737baf22152f"
+    "sourceHash": "v1-d075fc2ff3ba6deff84ca2cfbaee29e02f3065a834d5a964b125c73ef2da8e2a",
+    "sourceCommit": "8cc978183948532674e797c429305c9d8ab2a1c3"
   }
 }
