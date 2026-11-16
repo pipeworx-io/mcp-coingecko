@@ -1,6 +1,6 @@
 [
   {
-    "name": "get_coin",
+    "name": "coingecko_get_coin",
     "description": "Get live cryptocurrency data by CoinGecko ID (e.g., 'bitcoin', 'ethereum'). Returns USD price, market cap, 24h/7d/30d price changes, ATH, circulating supply, and a short description.",
     "inputSchema": {
       "type": "object",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "name": "get_trending",
+    "name": "coingecko_get_trending",
     "description": "Get the top trending cryptocurrencies on CoinGecko right now, ranked by 24-hour search activity. Returns coin IDs, names, symbols, market cap ranks, and trend scores. No parameters required.",
     "inputSchema": {
       "type": "object",

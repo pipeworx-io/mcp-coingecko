@@ -1,17 +1,17 @@
 # mcp-coingecko
 
-CoinGecko MCP — wraps CoinGecko free API (no auth required)
+Unofficial CoinGecko MCP — wraps CoinGecko free API (no auth required)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1863+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 2006+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `get_coin` | Get live cryptocurrency data by CoinGecko ID (e.g., 'bitcoin', 'ethereum'). Returns USD price, market cap, 24h/7d/30d price changes, ATH, circulating supply, and a short description. |
+| `coingecko_get_coin` | Get live cryptocurrency data by CoinGecko ID (e.g., 'bitcoin', 'ethereum'). Returns USD price, market cap, 24h/7d/30d price changes, ATH, circulating supply, and a short description. |
 | `search_coins` | Search for cryptocurrencies by name or symbol. Returns matching coins with their IDs. Example: search_coins({ query: "bitcoin" }) |
 | `get_market_data` | Get top cryptocurrencies ranked by market cap with current prices, 24h changes, and volume. Example: get_market_data({ vs_currency: "usd", limit: 10 }) |
-| `get_trending` | Get the top trending cryptocurrencies on CoinGecko right now, ranked by 24-hour search activity. Returns coin IDs, names, symbols, market cap ranks, and trend scores. No parameters required. |
+| `coingecko_get_trending` | Get the top trending cryptocurrencies on CoinGecko right now, ranked by 24-hour search activity. Returns coin IDs, names, symbols, market cap ranks, and trend scores. No parameters required. |
 
 ## Quick Start
 
@@ -57,7 +57,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1863+ data sources. The
+Both URLs reach the same gateway and the same 2006+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 
